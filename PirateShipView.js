@@ -1,16 +1,23 @@
 class View {
   constructor() {
-    this.shipSelector = "#pirateShipImage";
-    this.buttonSelector = "button";
+    this.shipSelector = "#pirateShip";
+    this.forwardButtonSelector = "forwardPirateShip";
+    this.backButtonSelector = "backPirateShip";
   }
   getShip() {
     return document.querySelector(this.shipSelector);
   }
+
   setShipLocation(location) {
-    var ship = this.getShip();
+    const ship = this.getShip();
     ship.style.left = location;
   }
-  getButton() {
-    return document.querySelector(this.buttonSelector);
+
+  getForwardButton() {
+    return document.getElementById(this.forwardButtonSelector);
+  }
+
+  getBackButton() {
+    return document.getElementById(this.backButtonSelector);
   }
 }

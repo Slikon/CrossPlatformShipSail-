@@ -12,13 +12,22 @@ class Controller {
   }
 
   bindListeners() {
-    var button = this.display.getButton();
-    button.addEventListener("click", () => this.moveModel());
+    const forwardButton = this.display.getForwardButton();
+    forwardButton.addEventListener("click", () => this.moveForward());
+
+    const backButton = this.display.getBackButton();
+    backButton.addEventListener("click", () => this.moveBack());
   }
 
-  moveModel() {
+  moveForward() {
     this.model.incrementLocation();
-    var newLocation = this.model.location;
+    const newLocation = this.model.location;
+    this.display.setShipLocation(newLocation);
+  }
+
+  moveBack() {
+    this.model.decrementLocation();
+    const newLocation = this.model.location;
     this.display.setShipLocation(newLocation);
   }
 }
