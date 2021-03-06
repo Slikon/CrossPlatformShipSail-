@@ -1,4 +1,4 @@
-class View {
+class ViewGui {
   constructor() {
     this.shipSelector = "#pirateShip";
     this.forwardButtonSelector = "forwardPirateShip";
@@ -21,3 +21,5 @@ class View {
     return document.getElementById(this.backButtonSelector);
   }
 }
+
+module.exports = ViewGui;

@@ -11,3 +11,5 @@ class PirateShipModel {
     this.location -= 10;
   }
 }
+
+module.exports = PirateShipModel;
