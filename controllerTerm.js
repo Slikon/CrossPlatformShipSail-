@@ -35,7 +35,7 @@ rl.on("line", (line) => {
   } else if (line === "l") {
     controller.moveLeft();
   } else if (line === "exit") {
-    return;
+    process.exit();
   } else {
     console.log("Unknown command.");
   }

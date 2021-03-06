@@ -1,13 +1,3 @@
-const PirateShipModel = require("./PirateShipModel");
-const ViewGui = require("./PirateShipViewGui");
-
-window.onload = function () {
-  var view = new ViewGui();
-  var ship = new PirateShipModel();
-  var controller = new ControllerGui(view, ship);
-  controller.bindListeners();
-};
-
 class ControllerGui {
   constructor(display, model) {
     this.display = display;
@@ -34,3 +24,10 @@ class ControllerGui {
     this.display.setShipLocation(newLocation);
   }
 }
+
+window.onload = function () {
+  var view = new ViewGui();
+  var model = new PirateShipModel();
+  var controller = new ControllerGui(view, model);
+  controller.bindListeners();
+};
